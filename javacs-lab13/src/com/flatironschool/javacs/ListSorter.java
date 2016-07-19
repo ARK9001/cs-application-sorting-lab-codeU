@@ -88,46 +88,34 @@ public class ListSorter<T> {
         	if(comparator.compare(part2, part1) > 0)
         	{
         		retList.add(part1);
-        		
+        		s1 = s1+1;
         		if(s1 == split1.size())
         		{
         			retList.add(part2);
-        			
-        			if(s2 < split2.size()){
+        			s2=s2+1;
+        			if(s2 < split2.size())
         				retList.add(split2.get(s2));
-        			}
-
-        			s2 = s2 + 1;
         		}
-
         		else
         		{
         			part1 = split1.get(s1);
         		}
-
-        		s1 = s1 + 1;
         	}
         	else
         	{
         		retList.add(part2);
-        	
+        		s2 = s2+1;
         		if(s2 == split2.size())
         		{
         			retList.add(part1);
-        			
-        			if(s1 < split1.size()){
+        			s1=s1+1;
+        			if(s1 < split1.size())
         				retList.add(split1.get(s1));
-        			}
-
-        			s1 = s1 + 1;
         		}
-        		
         		else
         		{
         			part2 = split2.get(s2);
         		}
-
-        		s2 = s2 + 1;
         	}
         }
 
